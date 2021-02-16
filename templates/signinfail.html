@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Sign In Fail Page</title>
+</head>
+<body>
+    <h1>You Have Been Unable To Be Signed In!</h1>
+    <h2>Under the username:</h2>
+    <h3> {{username}} </h3>
+	<div> --------------------------------------------------------------------------- </div>
+	<div>Please click here to try to log in again.</div>
+	<form action = "{{url_for('signin') }}" >
+		<div>
+		<button> Sign In Again </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>Please click here to go back to the homepage.</div>
+	<form action = "{{url_for('index') }}" >
+		<div>
+		<button> Home </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Author Search Results</title>
+</head>
+<body>
+	<h2><b><u> The Author Search Results Are As Follows For The Author: {{authortosearch}} </b></u></h2>
+	<div> Please Select a Search Result Option To Proceed. </div
+	<div> --------------------------------------------------------------------------- </div>
+
+	<form action = "{{url_for('bookresult') }}" method="post">
+		<div>
+		<select name="search_results">
+			{% for authorsearchresults in authorsearchresults %}
+			<option value="{{authorsearchresults.isbn}}">  AUTHOR: {{authorsearchresults.author}} - TITLE: {{authorsearchresults.title}} -ISBN: {{authorsearchresults.isbn}} - YEAR: {{authorsearchresults.year}} </option> 
+			{% endfor %}
+		</select>
+		<button> Select Book</button>
+		</div>
+	</form>
+
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>If your desired book is not in the options above, please try searching again.</div>
+	<form action = "{{url_for('booksearch') }}" method="post">
+		<div>
+		<button> Search Again! </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div> If you wish to log out, please click the following button</div>
+
+	<form action = "{{url_for('logout') }}" method="post">
+		<div>
+		<button> Log Out! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

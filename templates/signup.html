@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Sign Up Page</title>
+</head>
+<body>
+    <h2>To Sign up for this website, please use the entry form below</h2>
+    <h2>Only new usernames can be used</h2>
+	<form action = "{{url_for('signupcheck') }}" method="post">
+		<div>
+		<input name="username_new" type="text" placeholder="Username">
+		<input name="password_new" type="password" placeholder="Password">
+		<button> Sign-up </button>
+		</div>
+	</form>
+
+
+</body>
+</html>

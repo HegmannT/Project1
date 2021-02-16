@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Sign Up Verify Page</title>
+</head>
+<body>
+    <h1>You Are Sucsessfully Signed Up!</h1>
+    <h2>Under the username:</h2>
+    <h3> {{username}} </h3>
+<div> --------------------------------------------------------------------------- </div>
+	<h3> <u>Your possible user actions are as follows </u></h3>
+	<div> Please click the following button to search for a book </div>
+	<form action = "{{url_for('booksearch') }}" method="post">
+		<div>
+		<button> Search for a Book! </button>
+		</div>
+	</form>
+
+	<div> </div>
+	<div> Please click the following button to log out </div>
+
+	<form action = "{{url_for('logout') }}" method="post">
+		<div>
+		<button> Log Out! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

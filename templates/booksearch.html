@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Book Search</title>
+</head>
+<body>
+	<h3> You are currently logged in under the username {{username}} </h3>
+    <h3>Now that you are logged in, you may search for a book through one of the following queries:</h3>
+	<div> --------------------------------------------------------------------------- </div>
+   <p><u><b> To search for a book in our database: </u> please use one of the following search bars </b></p>
+	
+	<h4> To search for a book by ISBN:</h4>
+	<form action = "{{url_for('isbnsearch') }}" method="post">
+		<div>
+		<input name="isbn_search" type="text" placeholder="ISBN">
+		<button> Search ISBN </button>
+		</div>
+	</form>
+
+	<h4> To search for a book by Title:</h4>
+	<form action = "{{url_for('titlesearch') }}" method="post">
+		<div>
+		<input name="title_search" type="text" placeholder="Title">
+		<button> Search Title </button>
+		</div>
+	</form>
+
+	<h4> To search for a book by Author:</h4>
+	<form action = "{{url_for('authorsearch') }}" method="post">
+		<div>
+		<input name="author_search" type="text" placeholder="Author">
+		<button> Search Author </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<p><u><b> To search for a book in the Google Books API,</u> please use the following isbn search bar or enter the searched for isb into the url as <i>/api/isbn</i></b></p>
+	<form action = "{{url_for('googlebooksapisearch') }}" method="post">
+		<div>
+		<input name="googlebooks_search" type="text" placeholder="Google Books ISBN">
+		<button> Search Author </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+	<div> If you wish to log out, please click the following button</div>
+
+	<form action = "{{url_for('logout') }}" method="post">
+		<div>
+		<button> Log Out! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

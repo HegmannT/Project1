@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>API Search</title>
+</head>
+<body>
+	<h2><b><u> The Google Books API Search Of The ISBN: {{apisearch}} Yielded The Following Results</b></u></h2>
+	<div> --------------------------------------------------------------------------- </div>
+	<p> The book with the ISBN {{apisearch}} on Google Books API Is Listed As </p>
+	<ul>
+		<li> Title: {{Title}}</li>
+		<li> Author: {{Author}}</li>
+		<li> PublishedDate: {{PublishedDate}}</li>
+		<li> ISBN10: {{ISBN10}}</li>
+		<li> ISBN13: {{ISBN13}}</li>
+		<li> Review Count: {{RatingsCount}}</li>
+		<li> Average Rating: {{AvgRating}}</li>
+	</ul>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>For the JSON response format, you can go to the /api/isbn of this book through the following button</div>
+	<form action = "{{url_for('ISBNroute', ISBN = apisearch) }}">
+		<div>
+		<button> Please Click For Full JSON Information</button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>If your searched book is not the one above, please try searching again.</div>
+	<form action = "{{url_for('booksearch') }}" method="post">
+		<div>
+		<button> Search Again! </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div> If you wish to log out, please click the following button</div>
+
+	<form action = "{{url_for('logout') }}" method="post">
+		<div>
+		<button> Log Out! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

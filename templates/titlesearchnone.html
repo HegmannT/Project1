@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Title Search Results</title>
+</head>
+<body>
+	<h2><b><u> No Book Search Results Were Found With The Title: {{titletosearch}} </b></u></h2>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>Please Try To Search Again.</div>
+	<form action = "{{url_for('booksearch') }}" method="post">
+		<div>
+		<button> Search Again! </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div> If you wish to log out, please click the following button</div>
+
+	<form action = "{{url_for('logout') }}" method="post">
+		<div>
+		<button> Log Out! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

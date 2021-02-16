@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Book Search</title>
+</head>
+<body>
+
+	 <h1>You Are Sucsessfully Logged Out!</h1>
+    	<h2>From The Account:</h2>
+    	<h3> {{username}} </h3>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<p><u><b> To Sign In Again,</u> please use the following button </b></p>
+
+	<form action = "{{url_for('signin') }}">
+		<div>
+		<button>Sign In</button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+	<p><u><b> To Return To The Homepage ,</u> please use the following button </b></p>
+
+	<form action = "{{url_for('index') }}">
+		<div>
+		<button>Home</button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

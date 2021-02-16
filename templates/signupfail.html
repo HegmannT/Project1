@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Sign Up Fail Page</title>
+</head>
+<body>
+    <h1>You Are Unable To Be Signed Up!</h1>
+    <h2>The username:</h2>
+    <h3> {{username}} </h3>
+    <h2>Has already been taken</h2>
+	<div> --------------------------------------------------------------------------- </div>
+	<div>Please click here to try to sign up again.</div>
+	<form action = "{{url_for('signup') }}" >
+		<div>
+		<button> Sign Up Again </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>Please click here to go back to the homepage.</div>
+	<form action = "{{url_for('index') }}" >
+		<div>
+		<button> Home </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

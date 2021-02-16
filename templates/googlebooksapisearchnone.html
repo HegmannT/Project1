@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Book Search</title>
+</head>
+<body>
+	<h2><b><u> No Book Search Results Were Found With The ISBN: {{apisearch}} On The Google Books API</b></u></h2>
+	<p> Please check your spelling on the ISBN or enter a new one </p>
+	<div> --------------------------------------------------------------------------- </div>
+	<div>Please Try To Search Again by either visiting the search page:</div>
+	<form action = "{{url_for('booksearch') }}" method="post"> Google Books API
+		<div>
+		<button> Search Again! </button>
+		</div>
+	</form>
+	<div> Or enter the searched for isb into the url for this website as <i>/api/isbn</i> </div>
+
+	<div> --------------------------------------------------------------------------- </div>
+
+</body>
+</html>

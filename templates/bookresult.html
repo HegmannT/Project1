@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Book Search Results</title>
+</head>
+<body>
+	<h2> <b>Your Book Search Full Details Are As Follows</b> </h2>
+    	<h3>Please press back to return to the previous search results page</h3>
+	<div> --------------------------------------------------------------------------- </div>
+  	
+	<h3> <b>Book Information From DataBase: </b></h3>
+	<ul>
+		{% for bookdatasearchresults in bookdatasearchresults %}
+		<li> <b> Title: </b> {{bookdatasearchresults.title}} </li>
+		<li> <b> Author: </b> {{bookdatasearchresults.author}} </li>
+		<li> <b> ISBN: </b> {{bookdatasearchresults.isbn}} </li>
+		<li> <b> Year: </b> {{bookdatasearchresults.year}} </li>
+		{% endfor %}
+	</ul>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<h3><b> Google Books Review Data: </b></h3> 
+	<ul>
+		<li> <b> Average Rating: </b> {{AvgRating}} </b> </li>
+		<li> <b> Number of Rating: </b> {{RatingsCount}} </b> </li>
+	</ul>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<h3><b> Website Reviews: </b></h3> 
+	{% if not reviews %}
+		<div> There are no in-website reviews yet for this book </div>
+	{% endif %}
+		<ul>
+		{% for reviews in reviews %}
+			<li>USERNAME: {{reviews.username}} </li>
+			<li>RATING: {{reviews.ratingscale}} </li>
+			<li>REVIEW: {{reviews.review}} </li>
+			<li>---------------------- </li>
+		{% endfor %}
+		</ul>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<h3><b> Submit a Review: </b></h3> 
+	<div>Please note that your review will be logged under your username and you can only make one review per account </div>
+	<div>Reviews submitted under duplicate accounts will not be recorded </div>
+	<div>You are currently logged in under the username {{username}} </div>
+        <div> ~ </div>
+	<div> <u> Review Form </u></div>
+	<form action = "{{url_for('reviewprocess') }}" method="post">
+		<div>
+		<input type="radio" id="1" name="reviewnumber" value="1">
+		<label for="1">1 Star</label><br>
+		<input type="radio" id="2" name="reviewnumber" value="2">
+		<label for="2">2 Star</label><br>
+		<input type="radio" id="3" name="reviewnumber" value="3">
+		<label for="3">3 Star</label><br>
+		<input type="radio" id="4" name="reviewnumber" value="4">
+		<label for="4">4 Star</label><br>
+		<input type="radio" id="5" name="reviewnumber" value="5">
+		<label for="5">5 Star</label><br>
+		</div>
+		<div>
+		<input name="review" type="text" placeholder="ReviewText">
+		</div>
+		<button> Submit Review! </button>
+	</form>
+		
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>To Search for another book, please press the following button.</div>
+	<form action = "{{url_for('booksearch') }}" method="post">
+		<div>
+		<button> Search Again! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+	<div> If you wish to log out, please click the following button</div>
+
+	<form action = "{{url_for('logout') }}" method="post">
+		<div>
+		<button> Log Out! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

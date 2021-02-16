@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+	<h3><b>Welcome To ENGO 551 Lab 1 Book Search</b></h3>
+<div> Lab by Tanya Hegmann </div>
+	<div> --------------------------------------------------------------------------- </div>
+   <p><b> You are currently not signed in. To search for a book in the database you must have an account.</b></p>
+	
+	<h4> To Sign up for an account please, press the button below:</h4>
+	<form action = "{{url_for('signup') }}" >
+		<div>
+		<button> Sign up </button>
+		</div>
+	</form>
+
+	<h4> To Sign in to a pre-existing account, please press the button below:</h4>
+	<form action = "{{url_for('signin') }}" >
+		<div>
+		<button> Sign in </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>Review</title>
+</head>
+<body>
+	<h2> <b>Your Review Was Unable To Be Submitted Due to You Having <u>Already Submitted</u> A Review For This Book</b> </h2>
+    	<h3> Under the Username {{username}}</h3>
+	<div>A user can only submit one review per book </div>
+	<div> --------------------------------------------------------------------------- </div>
+  	<div>To Go back to your previous book page, please press the back button</div>
+	<form action = "{{url_for('bookresult') }}" method="post">
+		<div>
+		<button> Back To Book Details! </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div>To Search for another book, please press the following button.</div>
+	<form action = "{{url_for('booksearch') }}" method="post">
+		<div>
+		<button> Search Again! </button>
+		</div>
+	</form>
+
+	<div> --------------------------------------------------------------------------- </div>
+	<div> If you wish to log out, please click the following button</div>
+
+	<form action = "{{url_for('logout') }}" method="post">
+		<div>
+		<button> Log Out! </button>
+		</div>
+	</form>
+	<div> --------------------------------------------------------------------------- </div>
+</body>
+</html>
